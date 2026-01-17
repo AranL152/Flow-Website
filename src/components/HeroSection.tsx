@@ -21,7 +21,8 @@ const HeroSection = () => {
           />
           <text className="text-xs font-light fill-foreground">
             <textPath href="#curve-left" startOffset="0%">
-              project, but I'm not totally sure. Also, I told the team the the new timeline should be ready by Friday,
+              project, but I'm not totally sure. Also, I told the team the the
+              new timeline should be ready by Friday,
             </textPath>
           </text>
         </svg>
@@ -39,7 +40,8 @@ const HeroSection = () => {
           />
           <text className="text-xs font-light fill-foreground">
             <textPath href="#curve-right" startOffset="0%">
-              els like nobody really knows what's going on. Can you check in with the team and see
+              els like nobody really knows what's going on. Can you check in
+              with the team and see
             </textPath>
           </text>
         </svg>
@@ -51,8 +53,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight mb-6"
-          style={{ fontFamily: '"EB Garamond", Arial, sans-serif' }}
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight mb-6 font-serif"
         >
           <span className="text-foreground/70">Don't type, </span>
           <span className="text-foreground">just speak</span>
@@ -65,7 +66,8 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
         >
-          The voice-to-text AI that turns speech into clear, polished writing in every app.
+          The voice-to-text AI that turns speech into clear, polished writing in
+          every app.
         </motion.p>
 
         {/* CTA Button */}
@@ -75,24 +77,32 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col items-center gap-4"
         >
-          <Button 
-            size="lg" 
-            className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-8 py-6 text-base font-medium gap-2"
-            onClick={() => window.open('https://github.com/AranL152/wisprflow-builder', '_blank')}
+          <Button
+            size="lg"
+            className="rounded-full bg-[#f0d7ff] text-foreground hover:bg-[#e8c7ff] px-8 py-6 text-base font-medium gap-2"
+            onClick={() =>
+              window.open(
+                "https://github.com/AranL152/wisprflow-builder",
+                "_blank",
+              )
+            }
           >
             <Apple className="w-5 h-5" />
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3 3h18v18H3V3zm16 16V5H5v14h14z"/>
-              <path d="M12 7l5 5-5 5V7z"/>
+              <path d="M3 3h18v18H3V3zm16 16V5H5v14h14z" />
+              <path d="M12 7l5 5-5 5V7z" />
             </svg>
             Download for macOS
           </Button>
-          
+
           <p className="text-sm text-muted-foreground">
             Available on Mac, Windows and iPhone
           </p>
-          
-          <a href="#" className="text-sm text-foreground underline underline-offset-4 hover:text-foreground/80 transition-colors">
+
+          <a
+            href="#"
+            className="text-sm text-foreground underline underline-offset-4 hover:text-foreground/80 transition-colors"
+          >
             Android coming soon
           </a>
         </motion.div>
