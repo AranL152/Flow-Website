@@ -5,47 +5,6 @@ import VoiceWaveform from "./VoiceWaveform";
 const HeroSection = () => {
   return (
     <section className="relative pt-40 pb-16 px-4 overflow-hidden">
-      {/* Curved flowing text background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <svg
-          className="absolute -left-20 top-48 opacity-10"
-          width="200"
-          height="600"
-          viewBox="0 0 200 600"
-        >
-          <path
-            id="curve-left"
-            d="M 150 0 Q 50 150, 100 300 Q 150 450, 50 600"
-            fill="none"
-          />
-          <text className="text-xs font-light fill-foreground">
-            <textPath href="#curve-left" startOffset="0%">
-              project, but I'm not totally sure. Also, I told the team the the
-              new timeline should be ready by Friday,
-            </textPath>
-          </text>
-        </svg>
-
-        <svg
-          className="absolute -right-20 top-48 opacity-10"
-          width="300"
-          height="600"
-          viewBox="0 0 300 600"
-        >
-          <path
-            id="curve-right"
-            d="M 50 0 Q 200 150, 150 300 Q 100 450, 250 600"
-            fill="none"
-          />
-          <text className="text-xs font-light fill-foreground">
-            <textPath href="#curve-right" startOffset="0%">
-              els like nobody really knows what's going on. Can you check in
-              with the team and see
-            </textPath>
-          </text>
-        </svg>
-      </div>
-
       <div className="max-w-4xl mx-auto text-center relative">
         {/* Main headline */}
         <motion.h1
