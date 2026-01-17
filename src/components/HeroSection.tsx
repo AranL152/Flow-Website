@@ -9,8 +9,7 @@ const phrases = [
 ];
 
 const HeroSection = () => {
-  const [currentPhras
-    eIndex, setCurrentPhraseIndex] = useState(0);
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
