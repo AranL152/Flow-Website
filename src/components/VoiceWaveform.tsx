@@ -26,7 +26,7 @@ const VoiceWaveform = () => {
       </svg>
 
       {/* Waveform container */}
-      <div className="flex items-center justify-center gap-1 bg-card rounded-full px-8 py-5 shadow-lg border border-border/50 max-w-xs mx-auto">
+      <div className="flex items-center justify-center gap-1 bg-card rounded-full px-6 py-5 shadow-lg border-2 border-black max-w-[250px] mx-auto h-16">
         {bars.map((bar, index) => (
           <motion.div
             key={index}
@@ -36,7 +36,7 @@ const VoiceWaveform = () => {
               height: [8, bar.height, 8],
             }}
             transition={{
-              duration: 0.8,
+              duration: 1.6,
               repeat: Infinity,
               delay: bar.delay,
               ease: "easeInOut",

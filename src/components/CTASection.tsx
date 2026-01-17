@@ -56,8 +56,8 @@ const CTASection = () => {
               <Mic className="w-4 h-4" />
               Try Flow
             </Button>
-            <Button 
-              className="rounded-full bg-background text-foreground hover:bg-background/90 px-6"
+            <Button
+              className="rounded-lg bg-background text-foreground hover:bg-background/90 px-6 border-2 border-black"
               onClick={() => window.open('https://github.com/AranL152/wisprflow-builder', '_blank')}
             >
               Download for macOS
