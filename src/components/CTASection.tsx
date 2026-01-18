@@ -51,14 +51,14 @@ const CTASection = () => {
             <Button
               variant="outline"
               className="rounded-full bg-background text-foreground hover:bg-background/90 px-6 gap-2 border-2 border-black"
-              onClick={() => window.open('https://github.com/AranL152/wisprflow-builder', '_blank')}
+              onClick={() => window.open('https://github.com/JasonLovesDoggo/Flow/releases/latest/download/Flow-macOS-universal.dmg', '_blank')}
             >
               <Mic className="w-4 h-4" />
               Try Flow
             </Button>
             <Button
               className="rounded-lg bg-background text-foreground hover:bg-background/90 px-6 border-2 border-black"
-              onClick={() => window.open('https://github.com/AranL152/wisprflow-builder', '_blank')}
+              onClick={() => window.open('https://github.com/JasonLovesDoggo/Flow/releases/latest/download/Flow-macOS-universal.dmg', '_blank')}
             >
               Download for macOS
             </Button>

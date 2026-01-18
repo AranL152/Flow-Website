@@ -77,7 +77,7 @@ const HeroSection = () => {
             className="rounded-2xl bg-[#f0d7ff] text-foreground hover:bg-[#e8c7ff] px-8 py-6 text-base font-bold gap-2 border-2 border-black"
             onClick={() =>
               window.open(
-                "https://github.com/AranL152/wisprflow-builder",
+                "https://github.com/JasonLovesDoggo/Flow/releases/latest/download/Flow-macOS-universal.dmg",
                 "_blank",
               )
             }
