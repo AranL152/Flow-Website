@@ -90,14 +90,14 @@ const HeroSection = () => {
           </Button>
 
           <p className="text-sm text-muted-foreground">
-            Available on Mac, Windows and iPhone
+            Available on Mac
           </p>
 
           <a
             href="#"
             className="text-sm text-foreground underline underline-offset-4 hover:text-foreground/80 transition-colors"
           >
-            Android coming soon
+            Windows coming soon
           </a>
         </motion.div>
 
