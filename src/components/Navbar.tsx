@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, Apple } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isLogoHovered, setIsLogoHovered] = useState(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -61,13 +63,50 @@ const Navbar = () => {
       `}
       style={{ backgroundColor: '#feffef', borderColor: '#e3e4d0' }}>
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 px-3 group" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
-          <div className="flex gap-[3px] items-end h-5">
-            <div className="w-[3px] h-5 bg-stone-800 rounded-full transition-all group-hover:h-4" />
-            <div className="w-[3px] h-3.5 bg-stone-800 rounded-full transition-all group-hover:h-5" />
-            <div className="w-[3px] h-4 bg-stone-800 rounded-full transition-all group-hover:h-3" />
-            <div className="w-[3px] h-2.5 bg-stone-800 rounded-full transition-all group-hover:h-4" />
-          </div>
+        <a
+          href="#"
+          className="flex items-center gap-2 px-3 group"
+          onMouseEnter={() => setIsLogoHovered(true)}
+          onMouseLeave={() => setIsLogoHovered(false)}
+        >
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <motion.rect
+              x="2" y="3" width="20" height="3" rx="1.5"
+              fill="#1c1917"
+              animate={isLogoHovered ? { width: [20, 18, 20] } : { width: 20 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+            />
+            <motion.rect
+              x="2" y="7.5" width="11" height="3" rx="1.5"
+              fill="#1c1917"
+              animate={isLogoHovered ? { width: [11, 13, 11] } : { width: 11 }}
+              transition={{ duration: 0.6, ease: "easeInOut", delay: 0.1 }}
+            />
+            <motion.rect
+              x="2" y="12" width="20" height="3" rx="1.5"
+              fill="#1c1917"
+              animate={isLogoHovered ? { width: [20, 17, 20] } : { width: 20 }}
+              transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
+            />
+            <motion.rect
+              x="2" y="16.5" width="11" height="3" rx="1.5"
+              fill="#1c1917"
+              animate={isLogoHovered ? { width: [11, 14, 11] } : { width: 11 }}
+              transition={{ duration: 0.6, ease: "easeInOut", delay: 0.3 }}
+            />
+            <motion.rect
+              x="2" y="21" width="8" height="3" rx="1.5"
+              fill="#1c1917"
+              animate={isLogoHovered ? { width: [8, 10, 8] } : { width: 8 }}
+              transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
+            />
+          </svg>
           <span className="text-lg font-semibold text-stone-800 tracking-tight">Flow</span>
         </a>
 

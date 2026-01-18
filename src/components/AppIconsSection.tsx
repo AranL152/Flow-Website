@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const apps = [
   { name: "Slack", color: "bg-purple-100" },
@@ -17,6 +18,8 @@ const apps = [
 ];
 
 const AppIconsSection = () => {
+  const [isLogoHovered, setIsLogoHovered] = useState(false);
+
   return (
     <section className="py-24 px-4 bg-muted/50 rounded-t-[60px] -mt-8">
       <div className="max-w-6xl mx-auto">
@@ -26,6 +29,57 @@ const AppIconsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
+          {/* Logo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            animate={isLogoHovered ? { y: [0, -8, 0] } : { y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="flex justify-center mb-8 cursor-pointer"
+            onMouseEnter={() => setIsLogoHovered(true)}
+            onMouseLeave={() => setIsLogoHovered(false)}
+          >
+            <svg
+              width="80"
+              height="80"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <motion.rect
+                x="2" y="3" width="20" height="3" rx="1.5"
+                fill="currentColor"
+                animate={isLogoHovered ? { width: [20, 18, 20] } : { width: 20 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+              />
+              <motion.rect
+                x="2" y="7.5" width="11" height="3" rx="1.5"
+                fill="currentColor"
+                animate={isLogoHovered ? { width: [11, 13, 11] } : { width: 11 }}
+                transition={{ duration: 0.6, ease: "easeInOut", delay: 0.1 }}
+              />
+              <motion.rect
+                x="2" y="12" width="20" height="3" rx="1.5"
+                fill="currentColor"
+                animate={isLogoHovered ? { width: [20, 17, 20] } : { width: 20 }}
+                transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
+              />
+              <motion.rect
+                x="2" y="16.5" width="11" height="3" rx="1.5"
+                fill="currentColor"
+                animate={isLogoHovered ? { width: [11, 14, 11] } : { width: 11 }}
+                transition={{ duration: 0.6, ease: "easeInOut", delay: 0.3 }}
+              />
+              <motion.rect
+                x="2" y="21" width="8" height="3" rx="1.5"
+                fill="currentColor"
+                animate={isLogoHovered ? { width: [8, 10, 8] } : { width: 8 }}
+                transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
+              />
+            </svg>
+          </motion.div>
+
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="flex items-center gap-2 bg-card px-4 py-2 rounded-full border border-border/50">
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
