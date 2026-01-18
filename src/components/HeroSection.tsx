@@ -62,7 +62,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-lg md:text-xl max-w-2xl mx-auto mb-8 font-semibold text-[#141d21]"
         >
-          Voice-to-text AI that turns speech into polished, personalized writing.
+          A voice-to-text AI that adapts your words to who you're talking to — so you don't have to overthink what to say.
         </motion.p>
 
         {/* CTA Button */}
