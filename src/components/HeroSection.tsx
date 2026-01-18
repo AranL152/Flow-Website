@@ -74,7 +74,7 @@ const HeroSection = () => {
         >
           <Button
             size="lg"
-            className="rounded-2xl bg-[#f0d7ff] text-foreground hover:bg-[#e8c7ff] px-8 py-6 text-base font-bold gap-2 border-2 border-black"
+            className="rounded-2xl bg-[#f0d7e0] text-foreground hover:bg-[#e8c7d0] px-8 py-6 text-base font-bold gap-2 border-2 border-black"
             onClick={() =>
               window.open(
                 "https://github.com/JasonLovesDoggo/Flow/releases/latest/download/Flow-macOS-universal.dmg",

@@ -135,7 +135,7 @@ const Navbar = () => {
 
         {/* CTA Button */}
         <button
-          className="hidden md:flex items-center gap-2 px-5 py-2.5 bg-[#f0d7ff] text-foreground hover:bg-[#e8c7ff] text-sm font-bold rounded-2xl border-2 border-black transition-all duration-200 ml-2"
+          className="hidden md:flex items-center gap-2 px-5 py-2.5 bg-[#f0d7e0] text-foreground hover:bg-[#e8c7d0] text-sm font-bold rounded-2xl border-2 border-black transition-all duration-200 ml-2"
           onClick={() => window.open('https://github.com/JasonLovesDoggo/Flow/releases/latest/download/Flow-macOS-universal.dmg', '_blank')}
         >
           <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
@@ -169,7 +169,7 @@ const Navbar = () => {
             </a>
           ))}
           <button
-            className="w-full mt-3 px-5 py-3 bg-[#f0d7ff] text-foreground hover:bg-[#e8c7ff] text-sm font-bold rounded-2xl border-2 border-black flex items-center justify-center gap-2"
+            className="w-full mt-3 px-5 py-3 bg-[#f0d7e0] text-foreground hover:bg-[#e8c7d0] text-sm font-bold rounded-2xl border-2 border-black flex items-center justify-center gap-2"
             onClick={() => window.open('https://github.com/JasonLovesDoggo/Flow/releases/latest/download/Flow-macOS-universal.dmg', '_blank')}
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
