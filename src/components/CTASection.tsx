@@ -50,7 +50,7 @@ const CTASection = () => {
           >
             <Button
               variant="outline"
-              className="rounded-full border-background text-background hover:bg-background hover:text-foreground px-6 gap-2"
+              className="rounded-full bg-background text-foreground hover:bg-background/90 px-6 gap-2 border-2 border-black"
               onClick={() => window.open('https://github.com/AranL152/wisprflow-builder', '_blank')}
             >
               <Mic className="w-4 h-4" />

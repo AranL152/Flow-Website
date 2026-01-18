@@ -92,7 +92,7 @@ const SpeedSection = () => {
             variant="outline"
             className="rounded-full border-foreground text-foreground hover:bg-foreground hover:text-background px-6 gap-2"
           >
-            <Mic className="w-4 h-4" />
+            <Mic className="b-4 h-4" />
             Try Flow
           </Button>
           <Button className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-6">

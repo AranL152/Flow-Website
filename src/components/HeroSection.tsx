@@ -1,21 +1,58 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import VoiceWaveform from "./VoiceWaveform";
 
+const phrases = [
+  "Don't Type, Just Speak...",
+  "You Say It, I'll Write It...",
+];
+
 const HeroSection = () => {
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentPhrase = phrases[currentPhraseIndex];
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        // Typing
+        if (displayedText.length < currentPhrase.length) {
+          setDisplayedText(currentPhrase.slice(0, displayedText.length + 1));
+        } else {
+          // Pause before deleting
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      } else {
+        // Deleting
+        if (displayedText.length > 0) {
+          setDisplayedText(displayedText.slice(0, -1));
+        } else {
+          setIsDeleting(false);
+          setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
+        }
+      }
+    }, isDeleting ? 50 : 100);
+
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, currentPhraseIndex]);
+
   return (
     <section className="relative pt-40 pb-32 px-4 overflow-hidden min-h-screen">
       <div className="max-w-4xl mx-auto text-center relative">
-        {/* Main headline */}
+        {/* Main headline with typing animation */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-tight mb-6 font-serif tracking-tight"
-          style={{ transform: 'scaleY(1.15) scaleX(0.95)' }}
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mb-6 font-serif tracking-tight min-h-[1.3em] flex items-center justify-center whitespace-nowrap"
         >
-          <span className="text-foreground/40">Don't type, </span>
-          <span className="text-foreground">just speak</span>
+          <span className="text-foreground">
+            {displayedText}
+            <span className="animate-pulse text-foreground/60">|</span>
+          </span>
         </motion.h1>
 
         {/* Subheadline */}

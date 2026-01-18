@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { ChevronDown, Menu, X, Apple } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -8,34 +8,43 @@ const Navbar = () => {
   const lastScrollY = useRef(0);
 
   useEffect(() => {
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-    
-    setIsScrolled(currentScrollY > 20);
-    
-    if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-      setIsVisible(false);
-    } else if (currentScrollY < lastScrollY.current) {
-      setIsVisible(true);
-    }
-    
-    lastScrollY.current = currentScrollY;
-  };
-  
-  window.addEventListener('scroll', handleScroll);
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      setIsScrolled(currentScrollY > 20);
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY.current) {
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
-    { label: 'Product', hasDropdown: true },
-    { label: 'Individuals', hasDropdown: true },
-    { label: 'Business', hasDropdown: false },
-    { label: 'Pricing', hasDropdown: false },
-    { label: 'About', hasDropdown: true },
+    { label: 'Product', href: '#product' },
+    { label: 'Individuals', href: '#individuals' },
+    { label: 'Business', href: '#business' },
+    { label: 'Pricing', href: '#pricing' },
+    { label: 'About', href: '#about' },
   ];
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    setMobileMenuOpen(false);
+  };
+
   return (
-    <div 
+    <div
       className={`
         fixed top-12 left-0 right-0 z-50 flex justify-center px-4
         ease-in-out
@@ -52,7 +61,7 @@ const Navbar = () => {
       `}
       style={{ backgroundColor: '#feffef', borderColor: '#e3e4d0' }}>
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 px-3 group">
+        <a href="#" className="flex items-center gap-2 px-3 group" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
           <div className="flex gap-[3px] items-end h-5">
             <div className="w-[3px] h-5 bg-stone-800 rounded-full transition-all group-hover:h-4" />
             <div className="w-[3px] h-3.5 bg-stone-800 rounded-full transition-all group-hover:h-5" />
@@ -65,17 +74,22 @@ const Navbar = () => {
         {/* Desktop Nav Items - Centered */}
         <div className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
-            <button
+            <a
               key={item.label}
+              href={item.href}
+              onClick={(e) => scrollToSection(e, item.href)}
               className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-stone-600 hover:text-stone-900 hover:bg-stone-100/80 rounded-lg transition-all duration-200"
             >
               {item.label}
-              {item.hasDropdown && <ChevronDown className="w-3.5 h-3.5 opacity-50" />}
-            </button>
+            </a>
           ))}
-          <button className="px-4 py-2 text-sm font-medium text-stone-600 hover:text-stone-900 border border-stone-300/60 hover:border-stone-400 hover:bg-stone-50 rounded-lg transition-all duration-200 ml-1">
+          <a
+            href="#features"
+            onClick={(e) => scrollToSection(e, '#features')}
+            className="px-4 py-2 text-sm font-medium text-stone-600 hover:text-stone-900 border border-stone-300/60 hover:border-stone-400 hover:bg-stone-50 rounded-lg transition-all duration-200 ml-1"
+          >
             Research
-          </button>
+          </a>
         </div>
 
         {/* CTA Button */}
@@ -99,13 +113,14 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="lg:hidden absolute top-full mt-2 left-4 right-4 bg-white/95 backdrop-blur-xl rounded-2xl shadow-xl border border-stone-200/60 p-4 animate-fadeIn">
           {navItems.map((item) => (
-            <button
+            <a
               key={item.label}
+              href={item.href}
+              onClick={(e) => scrollToSection(e, item.href)}
               className="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-stone-700 hover:bg-stone-100 rounded-lg transition-colors"
             >
               {item.label}
-              {item.hasDropdown && <ChevronDown className="w-4 h-4 opacity-40" />}
-            </button>
+            </a>
           ))}
           <button className="w-full mt-3 px-5 py-3 bg-[#f0d7ff] text-foreground hover:bg-[#e8c7ff] text-sm font-bold rounded-2xl border-2 border-black flex items-center justify-center gap-2">
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">

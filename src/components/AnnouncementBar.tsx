@@ -8,7 +8,7 @@ const AnnouncementBar = () => {
       animate={{ y: 0 }}
       className="bg-forest text-primary-foreground py-3 px-4 flex items-center justify-center gap-3 text-sm font-medium"
     >
-      <span className="opacity-90">Wispr raises ¥81 to build the Voice OS.</span>
+      <span className="opacity-90">Flow raises ¥81 to build the Voice OS.</span>
       <a 
         href="https://www.cbc.ca/news/canada/hamilton/pot-sales-rosenthal-1.5286351" 
         className="flex items-center gap-1 hover:gap-2 transition-all duration-300 font-semibold"

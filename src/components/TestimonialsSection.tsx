@@ -3,37 +3,37 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     quote: "This is the best AI product I've used since ChatGPT.",
-    author: "Rahul Vohra",
+    author: "Jason Cameron",
     role: "CEO, Superhuman",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face",
   },
   {
     quote: "You're making texting actually delightful right now! Can see it becoming a can't live without product fast.",
-    author: "Tara Tan",
+    author: "Jason Cameron",
     role: "Founding Partner at Strange Ventures",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=face",
   },
   {
     quote: "I have Parkinson's, and this app has just made my life so much easier using my Mac. I can't even explain the change that it has provided for me.",
-    author: "Rich Pankey",
+    author: "Jason Cameron",
     role: "Indirect Sourcing Manager",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face",
   },
   {
     quote: "Hey! Flow is currently blowing my mind with how fast and useful it is!",
-    author: "Hargun Mujral",
+    author: "Jason Cameron",
     role: "ML Platforms at X",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=face",
   },
   {
     quote: "I was able to dictate ~70% of our Q2 board doc with Wispr, it was a massive time saver!",
-    author: "Jeff Seibert",
+    author: "Jason Cameron",
     role: "CEO, Digits AI",
     image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=80&h=80&fit=crop&crop=face",
   },
   {
     quote: "Flow is that extra little part of your brain that helps you formulate full sentences when you might be stuck in thought.",
-    author: "Jeannette Tan",
+    author: "Jason Cameron",
     role: "Fiction Writer",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face",
   },

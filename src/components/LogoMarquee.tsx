@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 const logos = [
-  "Lovable",
-  "Vercel",
-  "OpenAI",
-  "Replit",
-  "Mercury",
+  "Stan",
+  "CIBC",
+  "PitStop",
+  "Manulife",
+  "Mathnasium",
   "Nvidia",
   "Amazon",
   "Perplexity",

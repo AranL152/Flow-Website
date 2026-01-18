@@ -20,12 +20,24 @@ const Index = () => {
         <HeroSection />
         <AppIconsSection />
         <LogoMarquee />
-        <SpeedSection />
-        <UseCasesSection />
-        <FeaturesSection />
-        <TestimonialsSection />
-        <PricingSection />
-        <CTASection />
+        <div id="product">
+          <SpeedSection />
+        </div>
+        <div id="individuals">
+          <UseCasesSection />
+        </div>
+        <div id="features">
+          <FeaturesSection />
+        </div>
+        <div id="business">
+          <TestimonialsSection />
+        </div>
+        <div id="pricing">
+          <PricingSection />
+        </div>
+        <div id="about">
+          <CTASection />
+        </div>
       </main>
       <Footer />
     </div>
